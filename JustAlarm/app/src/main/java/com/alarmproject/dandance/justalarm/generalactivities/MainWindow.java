@@ -1,4 +1,4 @@
-package com.alarmproject.dandance.justalarm;
+package com.alarmproject.dandance.justalarm.generalactivities;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import com.alarmproject.dandance.justalarm.R;
 
 public class MainWindow extends AppCompatActivity {
 
