@@ -92,6 +92,12 @@ public class Notes_List extends AppCompatActivity {
 
         maps.add(objectItem4);
 
+        ObjectItem objectItem5 = new ObjectItem("Test 5",
+                GregorianCalendar.getInstance().getTime(),
+                images.getDrawable(IMGEnum.NOTDONE.index()));
+
+        maps.add(objectItem5);
+
         return maps;
     }
 

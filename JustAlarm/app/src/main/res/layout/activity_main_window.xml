@@ -6,7 +6,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        tools:context="com.alarmproject.dandance.justalarm.generalactivities.MainWindow">
+        tools:context="com.alarmproject.dandance.justalarm.generalactivities.MainWindow"
+>
 
     <android.support.design.widget.AppBarLayout
             android:layout_height="wrap_content"
@@ -22,7 +23,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_main_window"/>
+    <include layout="@layout/content_main_window" android:id="@+id/include"/>
 
     <android.support.design.widget.FloatingActionButton
             android:id="@+id/fab"
@@ -31,5 +32,25 @@
             android:layout_gravity="bottom|end"
             android:layout_margin="@dimen/fab_margin"
             app:srcCompat="@android:drawable/ic_dialog_email"/>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <Button
+                android:text="Заметки"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true" android:id="@+id/button3" android:onClick="showNotesList"/>
+        <Button
+                android:text="Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_above="@+id/button3"
+                android:layout_alignStart="@+id/button3" android:id="@+id/button4"/>
+        <Button
+                android:text="Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_below="@+id/button3"
+                android:layout_alignStart="@+id/button3" android:id="@+id/button5"/>
+    </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>

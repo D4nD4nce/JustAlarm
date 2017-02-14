@@ -38,5 +38,4 @@
             android:layout_alignParentEnd="true"
             android:textSize="10sp" />
 
-
 </RelativeLayout>
