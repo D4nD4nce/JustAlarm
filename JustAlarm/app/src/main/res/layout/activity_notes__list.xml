@@ -9,7 +9,7 @@
         tools:context="com.alarmproject.dandance.justalarm.generalactivities.Notes_List">
 
     <android.support.design.widget.AppBarLayout
-            android:layout_height="300dp"
+            android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:fitsSystemWindows="true"
             android:theme="@style/AppTheme.AppBarOverlay" android:layoutMode="clipBounds">
@@ -42,9 +42,26 @@
                     app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
                     app:layout_collapseMode="pin"
             />
+
         </android.support.design.widget.CollapsingToolbarLayout>
 
+
+
     </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <ListView
+                android:id="@+id/list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:listSelector="@drawable/item_list_selector"
+        />
+    </LinearLayout>
 
     <android.support.design.widget.FloatingActionButton
             android:id="@+id/fab"
@@ -53,25 +70,5 @@
             android:layout_gravity="bottom|end"
             android:layout_margin="@dimen/fab_margin"
             app:srcCompat="@android:drawable/ic_dialog_email"/>
-
-    <android.support.v4.widget.NestedScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior" android:clipToPadding="false">
-
-        <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" android:orientation="vertical">
-
-            <ListView
-                    android:id="@+id/list"
-                    android:layout_width="match_parent"
-                    android:layout_height="548dp"
-                    android:listSelector="@drawable/item_list_selector"
-                    android:headerDividersEnabled="false" android:footerDividersEnabled="false"/>
-        </LinearLayout>
-
-    </android.support.v4.widget.NestedScrollView>
-
 
 </android.support.design.widget.CoordinatorLayout>

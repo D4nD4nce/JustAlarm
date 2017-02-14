@@ -98,6 +98,42 @@ public class Notes_List extends AppCompatActivity {
 
         maps.add(objectItem5);
 
+        ObjectItem objectItem6 = new ObjectItem("Test 6",
+                GregorianCalendar.getInstance().getTime(),
+                images.getDrawable(IMGEnum.NOTDONE.index()));
+
+        maps.add(objectItem6);
+
+        ObjectItem objectItem7 = new ObjectItem("Test 7",
+                GregorianCalendar.getInstance().getTime(),
+                images.getDrawable(IMGEnum.NOTDONE.index()));
+
+        maps.add(objectItem7);
+
+        ObjectItem objectItem8 = new ObjectItem("Test 8",
+                GregorianCalendar.getInstance().getTime(),
+                images.getDrawable(IMGEnum.NOTDONE.index()));
+
+        maps.add(objectItem8);
+
+        ObjectItem objectItem9 = new ObjectItem("Test 9",
+                GregorianCalendar.getInstance().getTime(),
+                images.getDrawable(IMGEnum.NOTDONE.index()));
+
+        maps.add(objectItem9);
+
+        ObjectItem objectItem10 = new ObjectItem("Test 10",
+                GregorianCalendar.getInstance().getTime(),
+                images.getDrawable(IMGEnum.NOTDONE.index()));
+
+        maps.add(objectItem10);
+
+        ObjectItem objectItem11 = new ObjectItem("Test 11",
+                GregorianCalendar.getInstance().getTime(),
+                images.getDrawable(IMGEnum.NOTDONE.index()));
+
+        maps.add(objectItem11);
+
         return maps;
     }
 
