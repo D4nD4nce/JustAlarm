@@ -18,21 +18,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
-            android:text="NewNote"
             android:ems="10"
             android:layout_alignParentTop="true" android:layout_centerHorizontal="true" android:id="@+id/editTextTitle"
-            android:textAlignment="textStart" android:maxLines="1"/>
+            android:textAlignment="textStart" android:maxLines="1" android:hint="note name"/>
     <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content" app:srcCompat="@drawable/simple_line"
             android:layout_below="@+id/editTextTitle" android:layout_centerHorizontal="true"
-            android:id="@+id/imageView4" android:scaleType="fitXY"/>
+            android:id="@+id/imageView4" android:scaleType="fitXY" android:background="@android:color/background_dark"/>
     <EditText
             android:layout_width="match_parent"
             android:inputType="textMultiLine"
             android:ems="10"
-            android:id="@+id/editText2" android:textAlignment="textStart" android:maxLines="1"
+            android:id="@+id/editText2" android:maxLines="100"
             android:layout_below="@+id/imageView4" android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true" android:layout_height="wrap_content"/>
+            android:layout_alignParentBottom="true" android:layout_height="wrap_content"
+            android:fontFamily="sans-serif" android:typeface="normal" android:lineSpacingExtra="10sp"
+            android:gravity="top|left"/>
 
 </RelativeLayout>

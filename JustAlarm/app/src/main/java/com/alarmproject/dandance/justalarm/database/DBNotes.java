@@ -20,10 +20,10 @@ public class DBNotes {
     static final String DB_NOTES_TABLE = "notesTabDb";
 
     // таблица заметок
-    static final String COLUMN_ID_NOTES = "_id";
-    static final String COLUMN_IMG_NOTES = "imgNOTE";
-    static final String COLUMN_TITLE_NOTES = "titleNOTE";
-    static final String COLUMN_DESCRIPTION_NOTES = "descriptionNOTE";
+    public static final String COLUMN_ID_NOTES = "_id";
+    public static final String COLUMN_IMG_NOTES = "imgNOTE";
+    public static final String COLUMN_TITLE_NOTES = "titleNOTE";
+    public static final String COLUMN_DESCRIPTION_NOTES = "descriptionNOTE";
 
     private static final String DB_CREATE_MAIN_TABLE =
             "create table " + DB_NOTES_TABLE + " (" + COLUMN_ID_NOTES +
@@ -67,13 +67,22 @@ public class DBNotes {
         sqlDB.delete(DB_NOTES_TABLE, COLUMN_ID_NOTES + " = " + id, null);
     }
 
-    public void addRecNotesTab (String descript, String title, int img)
+    public void addRecNotesTab (String title, String descript, int img)
     {
         ContentValues cv = new ContentValues();
-        cv.put(COLUMN_DESCRIPTION_NOTES, descript);
         cv.put(COLUMN_TITLE_NOTES, title);
+        cv.put(COLUMN_DESCRIPTION_NOTES, descript);
         cv.put(COLUMN_IMG_NOTES, img);
         sqlDB.insert(DB_NOTES_TABLE, null, cv);
+    }
+
+    // обновить информацию в строке DB_NOTES_TABLE
+    public void btnUpdNotesTab (long id, String title, String descript)
+    {
+        ContentValues cv = new ContentValues();
+        cv.put(COLUMN_TITLE_NOTES, title);
+        cv.put(COLUMN_DESCRIPTION_NOTES, descript);
+        sqlDB.update(DB_NOTES_TABLE, cv, COLUMN_ID_NOTES + " = " + id, null);
     }
 
     public Cursor selectRecNotesTab (long id)
