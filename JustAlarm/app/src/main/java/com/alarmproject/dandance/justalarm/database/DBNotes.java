@@ -6,9 +6,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import static com.alarmproject.dandance.justalarm.database.DBSQLiteOpenHelper.*;
-
-public class DBGeneral {
+public class DBNotes {
 
     private Context sqlCtx;
     private SQLiteDatabase sqlDB;
@@ -18,15 +16,39 @@ public class DBGeneral {
     private static final String DB_NAME = "GeneralDB";
     private static final int DB_VERSION = 1;
 
-    DBGeneral(Context ctx)
+    // названия таблиц
+    static final String DB_NOTES_TABLE = "notesTabDb";
+
+    // таблица заметок
+    static final String COLUMN_ID_NOTES = "_id";
+    static final String COLUMN_IMG_NOTES = "imgNOTE";
+    static final String COLUMN_TITLE_NOTES = "titleNOTE";
+    static final String COLUMN_DESCRIPTION_NOTES = "descriptionNOTE";
+
+    private static final String DB_CREATE_MAIN_TABLE =
+            "create table " + DB_NOTES_TABLE + " (" + COLUMN_ID_NOTES +
+                    " integer primary key autoincrement, " + COLUMN_IMG_NOTES + " integer, "
+                    + COLUMN_TITLE_NOTES + " text, " + COLUMN_DESCRIPTION_NOTES + " text" + ");";
+
+    public DBNotes(Context ctx)
     {
         sqlCtx = ctx;
     }
 
     public void openReadableDB()
     {
+        if(sqlDBHelper != null) sqlDBHelper.close();
         sqlDBHelper = new DBSQLiteOpenHelper(sqlCtx, DB_NAME, null, DB_VERSION);
+        sqlDBHelper.setStrCreateTable(DB_CREATE_MAIN_TABLE);
         sqlDB = sqlDBHelper.getReadableDatabase();
+    }
+
+    public void openWrightableDB()
+    {
+        if(sqlDBHelper != null) sqlDBHelper.close();
+        sqlDBHelper = new DBSQLiteOpenHelper(sqlCtx, DB_NAME, null, DB_VERSION);
+        sqlDBHelper.setStrCreateTable(DB_CREATE_MAIN_TABLE);
+        sqlDB = sqlDBHelper.getWritableDatabase();
     }
 
     public void closeDB()

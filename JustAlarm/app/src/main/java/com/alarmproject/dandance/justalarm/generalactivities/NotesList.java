@@ -19,7 +19,7 @@ import com.alarmproject.dandance.justalarm.enums.IMGEnum;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
-public class Notes_List extends AppCompatActivity {
+public class NotesList extends AppCompatActivity {
 
     private ListView listView;
     private CustomAdapter adapter;
@@ -28,7 +28,7 @@ public class Notes_List extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_notes__list);
+        setContentView(R.layout.activity_notes_list);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

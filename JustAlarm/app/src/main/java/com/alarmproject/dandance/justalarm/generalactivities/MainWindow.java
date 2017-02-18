@@ -53,7 +53,7 @@ public class MainWindow extends AppCompatActivity {
     }
 
     public void showNotesList(View v) {
-        Intent intent = new Intent(this, Notes_List.class);
+        Intent intent = new Intent(this, NotesList.class);
         startActivity(intent);
     }
 }

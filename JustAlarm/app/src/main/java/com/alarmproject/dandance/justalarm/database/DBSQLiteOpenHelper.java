@@ -6,24 +6,14 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBSQLiteOpenHelper extends SQLiteOpenHelper {
 
-    // названия таблиц
-    static final String DB_NOTES_TABLE = "notesTabDb";
-
-    // таблица заметок
-    static final String COLUMN_ID_NOTES = "_id";
-    static final String COLUMN_IMG_NOTES = "imgNOTE";
-    static final String COLUMN_TITLE_NOTES = "titleNOTE";
-    static final String COLUMN_DESCRIPTION_NOTES = "descriptionNOTE";
-
-    private static final String DB_CREATE_MAIN_TABLE =
-            "create table " + DB_NOTES_TABLE + " (" + COLUMN_ID_NOTES +
-                    " integer primary key autoincrement, " + COLUMN_IMG_NOTES + " integer, "
-                    + COLUMN_TITLE_NOTES + " text, " + COLUMN_DESCRIPTION_NOTES + " text" + ");";
+    private String strCreateTable;
+    private String strTableName;
 
     DBSQLiteOpenHelper(Context context, String name, SQLiteDatabase.CursorFactory factory,
                        int version)
     {
         super(context, name, factory, version);
+        strTableName = name;
     }
 
     //создаем и заполняем БД
@@ -31,14 +21,21 @@ public class DBSQLiteOpenHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db)
     {
         // создание таблиц
-        db.execSQL(DB_CREATE_MAIN_TABLE);
+        db.execSQL(strCreateTable);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
     {
-        db.execSQL("drop table if exists " + DB_NOTES_TABLE);
+        db.execSQL("drop table if exists " + strTableName);
         this.onCreate(db);
     }
 
+    void setStrCreateTable(String strCreateTable) {
+        this.strCreateTable = strCreateTable;
+    }
+
+    void setStrTableName(String strTableName) {
+        this.strTableName = strTableName;
+    }
 }
